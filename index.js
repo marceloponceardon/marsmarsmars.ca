@@ -15,11 +15,25 @@ app.use(express.static('public'))
 app.set("view engine", "ejs");
 
 app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/views/index.html');
-	}
-);
+	res.render('index');
+});
+
+app.get('/about', (req, res) => {
+	res.render('about');
+});
+
+app.get('/portfolio', (req, res) => {
+	res.render('portfolio');
+});
+
+app.get('/resume', (req, res) => {
+	res.render('resume');
+});
+
+app.get('/contact', (req, res) => {
+	res.render('contact');
+});
 
 app.listen(port, () => {
 	console.log(`App listening on http://${host}:${port}`);
-	}
-);
+});
